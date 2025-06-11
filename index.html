@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--CDN link for Font Awsome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        height: 100%;
+        width: 100%;
+    }
+
+    .container {
+        margin-top: 80px;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cont1 {
+        text-align: center;
+    }
+
+    .cont2 {
+        text-align: center;
+    }
+
+    .cont3 {
+        text-align: center;
+    }
+
+    .cont4 {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+    }
+
+    .sH1,
+    .sH2 {
+        font-size: 3rem;
+        color: black;
+        text-transform: uppercase;
+    }
+
+    #button {
+        margin-block: 90px;
+        font-size: 18px;
+        padding: 8px 19px;
+        border-radius: 30px;
+        font-weight: 550;
+        background-color: white;
+        transition: background-color 0.5s ease, color 0.5s ease;
+    }
+
+    p {
+        font-size: 30px;
+        text-transform: uppercase;
+    }
+
+    #arrowBtn {
+        border: 0.7px solid black;
+        padding: 5px 9px;
+        font-size: 14px;
+        border-radius: 50%;
+    }
+
+    .mini {
+        padding: 5px 18px;
+        border: 1px solid black;
+        border-radius: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 20px;
+        gap: 5px;
+    }
+    .donld2 a {
+        color: black;
+        text-decoration: none;
+    }
+
+</style>
+
+<body id="bodyy">
+
+    <div class="container">
+        <div class="cont1">
+            <h2 class="sH1"> Background Color </h2>
+            <h2 class="sH2"> Changer </h2>
+        </div>
+
+        <div class="cont2">
+            <button id="button"> Change Background</button>
+        </div>
+
+        <div class="cont3">
+            <p id="p01"> Declaration : <span id="span" style="color: crimson; font-weight: 600;"> Result  </span> </p>
+        </div>
+
+        <div class="cont4">
+            <div class="mini" >
+                <div class="donld1">
+                    <button id="arrowBtn"><i class="fa-solid fa-arrow-down"> </i></button>
+                </div>
+                <div class="donld2">
+                    <a href="/Result Declaration BCA 2 SEM S-24 AMT-A-pdf.docx" target="_blank"> <h4 class="down"> DOWNLOAD </h4></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- <embed id="getData" src="/Result Declaration BCA 2 SEM S-24 AMT-A-pdf.docx" type="application/pdf"> -->
+    </div>
+
+
+    <script>
+        var h2 = document.querySelector(".sH1");
+        var h2a = document.querySelector(".sH2");
+        var btn = document.getElementById("button");
+        var bor = document.querySelector(".bor-btn");
+        var body = document.getElementById("bodyy");
+        var para = document.getElementById("p01");
+        var box = document.querySelector(".container");
+        var arrBtn = document.getElementById("arrowBtn");
+        var downloadBtn = document.querySelector(".mini");
+        var download = document.querySelector(".down");
+        var spanWord = document.getElementById("span");
+        var display = 0;
+
+        btn.addEventListener('click', function () {
+            if (!display) {
+                body.style.backgroundColor = "black";
+                btn.style.backgroundColor = "#444";
+                //btn.style.borderRadius = "1px solid white";
+                btn.style.color = "white";
+                btn.style.border = "1.7px solid white";
+                para.style.color = "white";
+                h2.style.color = "crimson";
+                h2a.style.color = "crimson";
+                arrBtn.style.backgroundColor = "#444";
+                arrBtn.style.color = "white";
+                arrBtn.style.border = "0.6px solid white";
+                // setTimeout(() => {
+                //     alert("Color Changed 'Black' !");
+                // }, 200);
+                downloadBtn.style.backgroundColor = "#444";
+                download.style.color = "white";
+                downloadBtn.style.border = "1.4px solid white";
+                // Span Word
+                spanWord.style.color = "white";
+            }
+            else {
+                body.style.backgroundColor = "white";
+                btn.style.backgroundColor = "white";
+                btn.style.border = "2px solid black";
+                btn.style.color = "black";
+                para.style.color = "black";
+                h2.style.color = "black";
+                h2a.style.color = "black";
+                arrBtn.style.backgroundColor = "black";
+                arrBtn.style.color = "white";
+                arrBtn.style.border = "none";
+                // setTimeout(() => {
+                //     alert("Color Changed 'White' !")
+                // }, 200)
+                downloadBtn.style.backgroundColor = "white";
+                download.style.color = "black";
+                arrBtn.style.border = "1.8px solid white";
+                downloadBtn.style.border = "1.9px solid black";
+                // Span Word 
+                spanWord.style.color = "crimson";
+
+            }
+            display = !display;
+        })
+
+
+
+        // function GetPDFDownload () {
+
+            // downloadBtn.addEventListener('click', function () {
+            //     let pdFile = document.querySelector(".mini");
+                // console.log(pdFile);
+                // console.log(window);
+                // var opt = {
+                //     margin: 1,
+                //     filename: 'Result Declaration BCA 2 SEM S-24 AMT-A-pdf.docx',
+                    // image: { type: 'jpeg' , quality: 0.98 },
+                    // html2canvas: { scale: 2 },
+                    // jsPDF: { unit: 'in' , format: 'letter' , orientation: 'portrait' }
+                //};
+                // html2pdf().from().save();
+            // })
+
+        // }
+
+
+        // Getting data using fetch method
+
+        let getData = new Promise((resolve, reject) => {
+
+            let complete = true;
+
+            setTimeout(() => {
+                if (complete) {
+                    resolve("Promise has resolved");
+                }
+                else {
+                    reject("Promise has rejected");
+                }
+            }, 3000);
+
+        })
+
+        arrBtn.addEventListener('click', function () {
+            console.log("Getting data from server .... ");
+            getData.then((msg) => {
+                fetch("https://jsonplaceholder.typicode.com/users")
+                    .then((response) => response.json())
+                    .then((data) => console.log(data))
+            })
+                .catch((msg) => {
+                    setTimeout(() => {
+                        console.log("ERROR 404 : Issue to Connecting with Internet");
+                    }, 2000);
+                })
+        })
+
+
+
+    </script>
+</body>
+
+</html>
